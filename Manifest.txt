@@ -5,7 +5,6 @@ README.txt
 Rakefile
 config/hoe.rb
 config/requirements.rb
-faker.tmproj
 lib/extensions/array.rb
 lib/extensions/object.rb
 lib/faker.rb
