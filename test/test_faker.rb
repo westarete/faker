@@ -8,4 +8,9 @@ class TestFaker < Test::Unit::TestCase
   def test_numerify
     assert Faker.numerify('###').match(/\d{3}/)
   end
+
+
+  def test_cc
+    assert Faker::Money::TestCards.values.flatten.include?(Faker::Money.test_number)
+  end
 end
