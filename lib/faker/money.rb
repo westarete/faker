@@ -28,7 +28,7 @@ module Faker
       end
 
       def currency_string(lim = (50..100))
-        sprintf("%.2f", "#{number(range)}.#{number(0..100)}".to_f)
+        sprintf("%.2f", "#{number(lim) - 1}.#{number(0..100)}".to_f)
       end
 
       def test_number(issuer = :all)

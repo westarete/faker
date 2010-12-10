@@ -13,4 +13,9 @@ class TestFaker < Test::Unit::TestCase
   def test_cc
     assert Faker::Money::TestCards.values.flatten.include?(Faker::Money.test_number)
   end
+
+  def test_money
+    assert Faker::Money.currency_string(12..25).to_f < 25
+    assert Faker::Money.currency_string(12..25).to_f > 12
+  end
 end
