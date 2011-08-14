@@ -11,7 +11,7 @@ module Faker
 
       def password(size = 10)
         chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a
-        (1..len.to_i).to_a.inject("") { |pass,i| pass << chars[rand(chars.size-1)] }
+        (1..size.to_i).to_a.inject("") { |pass,i| pass << chars[rand(chars.size-1)] }
       end
 
       def email(name = nil)
