@@ -1,6 +1,19 @@
+require 'ipaddr'
+
 module Faker
   class Internet
     class << self
+
+      def ipv4
+        IPAddr.new(rand(2**32),Socket::AF_INET)
+      end
+      alias :ip :ipv4
+
+      def password(size = 10)
+        chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a
+        (1..size.to_i).to_a.inject("") { |pass,i| pass << chars[rand(chars.size-1)] }
+      end
+
       def email(name = nil)
         [ user_name(name), domain_name ].join('@')
       end
